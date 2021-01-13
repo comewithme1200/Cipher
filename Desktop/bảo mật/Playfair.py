@@ -45,10 +45,12 @@ class Playfair:
         result = ""
         for i in range(0,len(textcutted),2):
             if int(matrix.index(textcutted[i+1])/5) == int(matrix.index(textcutted[i])/5):
+                #print(matrix.index(textcutted[i + 1]), end=" ")
+                #print(matrix.index(textcutted[i]))
                 if matrix.index(textcutted[i + 1]) % 5 == 4:
                     result += matrix[matrix.index(textcutted[i]) + 1] + matrix[matrix.index(textcutted[i+1]) -4]
                 else:
-                    result += matrix[matrix.index(textcutted[i])] + matrix[matrix.index(textcutted[i+1])]
+                    result += matrix[matrix.index(textcutted[i])+1] + matrix[matrix.index(textcutted[i+1])+1]
             elif matrix.index(textcutted[i+1]) % 5 == matrix.index(textcutted[i]) % 5:
                 if int(matrix.index(textcutted[i + 1]) / 5) == 4:
                     result += matrix[matrix.index(textcutted[i]) + 5] + matrix[matrix.index(textcutted[i+1])%5]
@@ -57,7 +59,10 @@ class Playfair:
             elif int(matrix.index(textcutted[i+1])/5) != int(matrix.index(textcutted[i])/5):
                 np1 = int(matrix.index(textcutted[i])/5)
                 np2 = int(matrix.index(textcutted[i+1])/5)
+                #if np2>np1:
                 result += matrix[matrix.index(textcutted[i+1])-(np2-np1)*5] + matrix[matrix.index(textcutted[i])+(np2-np1)*5]
+                #elif np1>np2:
+                    #result += matrix[matrix.index(textcutted[i + 1]) - (np1 - np2) * 5] + matrix[matrix.index(textcutted[i]) + (np1 - np2) * 5]
         return result
 
 if __name__ == '__main__':
@@ -68,4 +73,4 @@ if __name__ == '__main__':
     matrix = Playfair.makematrix(key)
     print(Playfair.makematrix(key))
     print(Playfair.cuttext(plaintext))
-    print(Playfair.encrypt(matrix, plaintext))
+    print(Playfair.encrypt(matrix, Playfair.cuttext(plaintext)))
