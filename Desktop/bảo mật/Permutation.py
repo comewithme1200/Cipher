@@ -3,7 +3,7 @@ class permutation:
         result=''
         for i in range(n):
             for j in range(len(plaintext)):
-                if j%4 == i:
+                if j%n == i:
                     result += plaintext[j]
             result += " "
         return result

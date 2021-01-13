@@ -10,5 +10,3 @@ if __name__ == '__main__':
     key = input()
     singlechar = singlechar()
     print(singlechar.encrypt(key, plaintext))
-#pennywisepoundfo
-#kgoxpmuhcaytjqwzrivesfldnb
