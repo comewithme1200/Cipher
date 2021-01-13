@@ -14,6 +14,6 @@ class Caesar:
         return result
 if __name__ == '__main__':
     Caesar = Caesar()
-    a=input()
-    print(Caesar.encrypt(25, a))
-    print(Caesar.decrypt(25,Caesar.encrypt(25, a)))
+    plaintext=input()
+    print(Caesar.encrypt(25, plaintext))
+    print(Caesar.decrypt(25,Caesar.encrypt(25, plaintext)))
