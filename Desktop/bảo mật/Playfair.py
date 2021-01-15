@@ -49,6 +49,8 @@ class Playfair:
                 #print(matrix.index(textcutted[i]))
                 if matrix.index(textcutted[i + 1]) % 5 == 4:
                     result += matrix[matrix.index(textcutted[i]) + 1] + matrix[matrix.index(textcutted[i+1]) -4]
+                elif matrix.index(textcutted[i]) % 5 == 4:
+                    result += matrix[matrix.index(textcutted[i]) -4] + matrix[matrix.index(textcutted[i+1]) +1] 
                 else:
                     result += matrix[matrix.index(textcutted[i])+1] + matrix[matrix.index(textcutted[i+1])+1]
             elif matrix.index(textcutted[i+1]) % 5 == matrix.index(textcutted[i]) % 5:
