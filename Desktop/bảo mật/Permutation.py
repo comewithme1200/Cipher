@@ -8,7 +8,7 @@ class permutation:
             result += " "
         return result
 if __name__ == '__main__':
-    n = int(input())
     plaintext = input()
+    n = int(input())
     permutation = permutation()
     print(permutation.encrypt(n,plaintext))
